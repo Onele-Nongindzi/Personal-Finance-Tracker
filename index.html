@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Finance Tracker</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Personal Finance Tracker</h1>
     <div id="app">
         <input type="text" id="transaction" placeholder="Enter transaction">
+        <select id="category">
+            <option value="Income">Income</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Other">Other</option>
+        </select>
         <button onclick="addTransaction()">Add</button>
         <div id="summary"></div>
+        <div id="chartContainer"></div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
