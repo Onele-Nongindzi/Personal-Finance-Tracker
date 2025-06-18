@@ -18,10 +18,13 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, button {
+input, select, button {
     padding: 10px;
     margin: 5px 0;
     font-size: 16px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
@@ -29,6 +32,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    width: auto;
 }
 
 button:hover {
@@ -36,5 +40,11 @@ button:hover {
 }
 
 #summary {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+#chartContainer {
     margin-top: 20px;
 }
