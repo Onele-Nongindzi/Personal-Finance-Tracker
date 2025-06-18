@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance Tracker</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <header>
     <h1>Personal Finance Tracker</h1>
-    <div id="app">
-        <input type="text" id="transaction" placeholder="Enter transaction">
+  </header>
+  <main>
+    <div class="container">
+      <div class="input-group">
+        <input type="text" id="description" placeholder="Enter description (e.g., Salary, Groceries)" />
+        <input type="number" id="amount" placeholder="Enter amount (e.g., 200 or -50)" />
         <select id="category">
-            <option value="Income">Income</option>
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="Other">Other</option>
+          <option value="Income">Income</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Education">Education</option>
+          <option value="Debt">Debt</option>
+          <option value="Investments">Investments</option>
+          <option value="Savings">Savings</option>
+          <option value="Other">Other</option>
         </select>
         <button onclick="addTransaction()">Add</button>
-        <div id="summary"></div>
-        <div id="chartContainer"></div>
+      </div>
+
+      <div id="summary" class="summary"></div>
+      <h3>Transaction History</h3>
+      <ul id="transaction-list" class="transaction-list"></ul>
     </div>
-    <script src="./script.js"></script>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>
