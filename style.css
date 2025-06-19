@@ -1,13 +1,23 @@
+:root {
+  --color-primary: #4CAF50;
+  --color-primary-dark: #45a049;
+  --color-danger: #e74c3c;
+  --color-warning: #fbc02d;
+  --color-success: #4CAF50;
+  --color-bg: #f0f2f5;
+  --color-text: #333;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
+  background-color: var(--color-bg);
   margin: 0;
   padding: 0;
-  color: #333;
+  color: var(--color-text);
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: var(--color-primary);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -34,6 +44,7 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 input, select {
@@ -42,20 +53,40 @@ input, select {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  min-width: 120px;
 }
 
 button {
+  flex: 0 0 auto;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+button:hover,
+button:focus {
+  background-color: var(--color-primary-dark);
+  outline: none;
+}
+
+button:active {
+  background-color: #3e8e41;
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .summary {
@@ -77,15 +108,126 @@ button:hover {
   padding: 10px;
   margin-bottom: 8px;
   background-color: #eef1f4;
-  border-left: 6px solid #4CAF50;
+  border-left: 6px solid var(--color-primary);
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
+.transaction-list li.income {
+  border-left-color: var(--color-success);
+  background-color: #e6f4ea;
+}
+
+.transaction-list li.expense {
+  border-left-color: var(--color-danger);
+  background-color: #fdecea;
+}
+
+.transaction-list li:hover {
+  background-color: #dff0d8;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-danger);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  color: #b32e2e;
+  outline: none;
+  text-decoration: underline;
+}
+
+.budget-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f2f8f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.overall-budget, .category-budgets {
+  margin-top: 15px;
+}
+
+.overall-budget input, .category-budgets input {
+  margin-right: 10px;
+  padding: 6px;
+  width: 100px;
+  min-width: 100px;
+}
+
+#monthly-budget-summary {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.budget-ok {
+  color: var(--color-success);
+}
+
+.budget-warning {
+  color: var(--color-warning);
+}
+
+.budget-over {
+  color: var(--color-danger);
+}
+
+/* 💹 Progress Bar Styling */
+.budget-progress {
+  height: 14px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.budget-progress-bar {
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-green {
+  background-color: var(--color-success);
+}
+
+.progress-yellow {
+  background-color: var(--color-warning);
+}
+
+.progress-red {
+  background-color: var(--color-danger);
+}
+
+/* Visually hidden (for labels only) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive */
 @media (max-width: 480px) {
   .input-group {
     flex-direction: column;
   }
-  button {
+  input, select, button {
     width: 100%;
+    min-width: auto;
   }
 }

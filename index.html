@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Track your personal finance, add transactions, budgets, and view history." />
   <title>Personal Finance Tracker</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -12,10 +13,15 @@
   </header>
   <main>
     <div class="container">
-      <div class="input-group">
-        <input type="text" id="description" placeholder="Enter description (e.g., Salary, Groceries)" />
-        <input type="number" id="amount" placeholder="Enter amount (e.g., 200 or -50)" />
-        <select id="category">
+      <form id="transaction-form" class="input-group" autocomplete="off">
+        <label for="description" class="visually-hidden">Description</label>
+        <input type="text" id="description" placeholder="Enter description (e.g., Salary, Groceries)" required />
+
+        <label for="amount" class="visually-hidden">Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount (e.g., 200 or -50)" step="0.01" required />
+
+        <label for="category" class="visually-hidden">Category</label>
+        <select id="category" required>
           <option value="Income">Income</option>
           <option value="Food">Food</option>
           <option value="Transport">Transport</option>
@@ -29,14 +35,17 @@
           <option value="Savings">Savings</option>
           <option value="Other">Other</option>
         </select>
-        <button onclick="addTransaction()">Add</button>
-      </div>
 
-      <div id="summary" class="summary"></div>
+        <button type="submit">Add</button>
+      </form>
+
+      <section id="summary" class="summary" aria-live="polite"></section>
+
       <h3>Transaction History</h3>
-      <ul id="transaction-list" class="transaction-list"></ul>
+      <ul id="transaction-list" class="transaction-list" aria-live="polite" aria-relevant="additions removals"></ul>
     </div>
   </main>
+
   <script src="./script.js"></script>
 </body>
 </html>
