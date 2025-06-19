@@ -14,9 +14,9 @@ The app is deployed on Netlify and can be accessed at:https://imaginative-sprite
 ## Installation
 ### Prerequisites
 
-A web browser (e.g., Chrome, Firefox, Edge).
-Git (for cloning the repository).
-Optional: Python (for local testing with python -m http.server).
+- A web browser (e.g., Chrome, Firefox, Edge).
+- Git (for cloning the repository).
+- Optional: Python (for local testing with python -m http.server).
 
 ## Setup
 
@@ -37,41 +37,41 @@ Open http://localhost:8000 in your browser.
 
 ## Usage
 
-Enter a transaction description (e.g., "Salary" or "Groceries") in the input field.
-Select a category from the dropdown.
-Click "Add" to log the transaction.
-View the summary below, which updates in real-time.
-Use the "Clear All" button to reset transactions (with confirmation).
-Test accessibility with keyboard navigation or screen readers.
+- Enter a transaction description (e.g., "Salary" or "Groceries") in the input field.
+- Select a category from the dropdown.
+- Click "Add" to log the transaction.
+- View the summary below, which updates in real-time.
+- Use the "Clear All" button to reset transactions (with confirmation).
+- Test accessibility with keyboard navigation or screen readers.
 
 ## Development
 ### Built With
 
-HTML: Structure of the app.
-CSS: Styling with modern animations and responsive design.
-JavaScript: Core functionality for transaction management.
+- HTML: Structure of the app.
+- CSS: Styling with modern animations and responsive design.
+- JavaScript: Core functionality for transaction management.
 
 ### Contributing
 Feel free to fork this repository and submit pull requests. Suggestions for improvements (e.g., adding amounts, persistence) are welcome!
 ### Commit History
 
-Initial setup with basic CSS and JavaScript.
-Added transaction categories and delete buttons.
-Enhanced UI/UX with feedback, animations, and layout improvements.
+- Initial setup with basic CSS and JavaScript.
+- Added transaction categories and delete buttons.
+- Enhanced UI/UX with feedback, animations, and layout improvements.
 
 ## Deployment
 The app is deployed on Netlify. To redeploy after changes:
 
-Push updates to the main branch on GitHub.
-Netlify will automatically rebuild and deploy from the repository.
+- Push updates to the main branch on GitHub.
+- Netlify will automatically rebuild and deploy from the repository.
 
 ## License
 This project is open-source. Feel free to use and modify it under the MIT License (add a LICENSE file if desired).
 ## Contact
 
-Owner: Onele Nongindzi
-GitHub: Onele-Nongindzi
-Questions?: Open an issue in this repository or contact via GitHub.
+- Owner: Onele Nongindzi
+- GitHub: Onele-Nongindzi
+- Questions?: Open an issue in this repository or contact via GitHub.
 
 ## Acknowledgments
 
